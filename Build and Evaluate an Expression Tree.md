@@ -1,40 +1,41 @@
-# Ex. No: 15C - Expression Tree with Inorder and Postorder Traversal
+# Ex. No: 15E - Build and Evaluate an Expression Tree
 
 ## AIM:
-To write a Python program to build the given expression tree and print the inorder and postorder traversals.
+To write a Python program to build and evaluate the given Expression tree.
 
 ---
 
 ## ALGORITHM:
 
 1. **Start the program.**
-2. Import the required modules (`build` and `Node` from `binarytree`).
-3. Define a list `x` representing the expression tree in pre-order fashion (with `None` for missing nodes).
-4. Use the `build()` function to generate the binary tree.
-5. Print the **inorder** and **postorder** traversal of the tree.
+2. Create nodes for operators and operands.
+3. Build the expression tree by connecting nodes in the correct hierarchical structure.
+4. Define a recursive function `evaluate(root)`:
+   - If the node is a number (leaf), return it.
+   - Else, recursively evaluate left and right subtrees.
+   - Apply the operator at the current node to the results.
+5. Return the final result from the root node.
 6. **End the program.**
 
 ---
 
+
 ## PROGRAM:
 
 ```python
+
 from binarytree import build
-nodes=['A','B','C','D','E','F',None,'G']
-root=build(nodes)
-print("Binary tree:")
-for i in (root.values):
-    print(i,'-->',end="")
-print("\nlevel order traversal:",root.levelorder)
-print("\nInorder traversal:",root.inorder)
-print("\nPreorder traversal:",root.preorder)
-print("\nPostorder traversal:",root.postorder)
+x=['*','+','-',9,3,8,4]
+t=build(x)
+print(t.inorder)
+print(t.postorder)
+
 ```
 
-## OUTPUT
+## OUTPUT:
 
-<img width="937" height="197" alt="image" src="https://github.com/user-attachments/assets/2cda059d-a7ba-4e92-b121-65748064b09a" />
+<img width="848" height="117" alt="image" src="https://github.com/user-attachments/assets/99b8da23-79d5-4ecf-a84a-10e4caef6030" />
 
-## RESULT
+## RESULT:
 
 Thus, the python code is written and executed successfully.
